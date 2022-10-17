@@ -113,8 +113,11 @@
                     tableData.show=$(p1).html();
                 }
                 else if(p1.find("div[class*=gw2a-specializations-embed]").length>=1){
+                    var traitstext = "data-armory-"+tableData.ids+"-traits";
+                    var traits_id = p1.attr(traitstext);
                     tableData.leixing = "specializations";
-                    tableData.daima='[gw2armory data-armory-embed="specializations" data-armory-ids="'+tableData.ids+'"]'
+                    tableData.daima='[gw2armory data-armory-embed="specializations" data-armory-ids="'+tableData.ids+'"' +
+                        ' data-armory-'+tableData.ids+'-traits='+traits_id+']'
                     tableData.show=$(p1).html();
                 }
                 else if(p1.find("div[class*=gw2a-traits-embed]").length>=1){
